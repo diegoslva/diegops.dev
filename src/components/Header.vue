@@ -18,7 +18,7 @@ const selectedIndex = ref(0);
 const navigationItems = [
   { name: 'Home', path: '/', icon: 'Terminal' },
   { name: 'Sobre', path: '/about', icon: 'User' },
-  { name: 'Games', path: '/games', icon: 'Game' },
+  { name: 'Games', path: '/games', icon: 'Joystick' },
   { name: 'Projetos', path: '/projects', icon: 'Code' },
 ];
 
@@ -67,7 +67,7 @@ const handleItemSelect = (item) => {
       case 'newsletter':
         break;
       case 'contact':
-        break;
+         window.open('mailto:diegoslva7@gmail.com', '');
       case 'github':
         window.open('https://github.com/diegoslva', '_blank');
         break;
@@ -167,8 +167,8 @@ defineExpose({
         class="fixed inset-0 bg-black/50 command-backdrop"
         @click="isCommandOpen = false"
       ></div>
-      <div class="relative w-full max-w-lg bg-popover border border-border rounded-lg shadow-command animate-scale-in">
-        <div class="flex items-center border-b border-border px-4">
+      <div class="relative w-full max-w-lg bg-popover rounded-lg shadow-command animate-scale-in bg-[#ffffff14] backdrop-blur-3xl">
+        <div class="flex items-center px-4">
           <Icon name="Search" :size="16" class="text-muted-foreground" />
           <input
             type="text"
@@ -180,7 +180,7 @@ defineExpose({
           />
           <kbd class="text-xs text-muted-foreground">ESC</kbd>
         </div>
-        <div class="max-h-80 overflow-y-auto py-2">
+        <div class="max-h-96 overflow-y-auto py-2">
           <div v-if="filteredItems.length === 0" class="px-4 py-6 text-center text-sm text-muted-foreground">
             No results found.
           </div>
@@ -189,13 +189,13 @@ defineExpose({
               v-for="(item, index) in filteredItems"
               :key="item.name"
               @click="handleItemSelect(item)"
-              :class="`w-full flex items-center space-x-3 px-4 py-2 text-left text-sm transition-colors ${
+              :class="`w-full flex items-center space-x-3 px-4 py-2 text-left transition-colors text-xl ${
                 index === selectedIndex
                   ? 'bg-accent text-accent-foreground'
-                  : 'hover:bg-accent/50'
+                  : 'hover:bg-[#ffffff17]'
               }`"
             >
-              <Icon :name="item.icon" :size="16" />
+              <Icon :name="item.icon" :size="22" />
               <span>{{ item.name }}</span>
               <Icon 
                 v-if="item.path && isActivePath(item.path)" 
@@ -206,8 +206,8 @@ defineExpose({
             </button>
           </template>
         </div>
-        <div class="border-t border-border px-4 py-2 text-xs text-muted-foreground">
-          Use ↑↓ to navigate, ↵ to select, ESC to close
+        <div class="px-4 py-2 text-xs text-muted-foreground">
+          Use ↵ to select, ESC to close
         </div>
       </div>
     </div>
