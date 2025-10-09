@@ -17,15 +17,14 @@ const selectedIndex = ref(0);
 
 const navigationItems = [
   { name: 'Home', path: '/', icon: 'Terminal' },
-  { name: 'About', path: '/about', icon: 'User' },
-  { name: 'Articles', path: '/articles', icon: 'FileText' },
-  { name: 'Projects', path: '/projects', icon: 'Code' },
+  { name: 'Sobre', path: '/about', icon: 'User' },
+  { name: 'Games', path: '/games', icon: 'Game' },
+  { name: 'Projetos', path: '/projects', icon: 'Code' },
 ];
 
 const commandItems = [
   ...navigationItems,
-  { name: 'Newsletter', action: 'newsletter', icon: 'Mail' },
-  { name: 'Contact', action: 'contact', icon: 'MessageCircle' },
+  { name: 'Contato', action: 'contact', icon: 'MessageCircle' },
   { name: 'GitHub', action: 'github', icon: 'Github' },
   { name: 'LinkedIn', action: 'linkedin', icon: 'Linkedin' },
 ];
@@ -70,10 +69,10 @@ const handleItemSelect = (item) => {
       case 'contact':
         break;
       case 'github':
-        window.open('https://github.com', '_blank');
+        window.open('https://github.com/diegoslva', '_blank');
         break;
       case 'linkedin':
-        window.open('https://linkedin.com', '_blank');
+        window.open('https://www.linkedin.com/in/diegoslva/', '_blank');
         break;
     }
   }
@@ -92,6 +91,16 @@ onUnmounted(() => {
 
 watch(filteredItems, () => {
   selectedIndex.value = 0;
+});
+
+const openCommandPalette = () => {
+  isCommandOpen.value = true;
+  searchQuery.value = '';
+  selectedIndex.value = 0;
+};
+
+defineExpose({
+  openCommandPalette
 });
 </script>
 
@@ -125,16 +134,18 @@ watch(filteredItems, () => {
 
       <!-- Command Palette Trigger & Actions -->
       <div class="flex items-center space-x-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          @click="isCommandOpen = true"
-          class="hidden md:flex items-center space-x-2 text-muted-foreground hover:text-foreground"
-        >
-          <Icon name="Search" :size="16" />
-          <span class="text-xs">Buscar</span>
-          <kbd class="text-xs">⌘K</kbd>
-        </Button>
+        <div class="hidden md:flex">
+          <Button
+            variant="ghost"
+            size="sm"
+            @click="isCommandOpen = true"
+            class="hidden md:flex items-center space-x-2 text-muted-foreground hover:text-foreground"
+          >
+            <Icon name="Search" :size="16" />
+            <span class="text-xs">Buscar</span>
+            <kbd class="text-xs">⌘K</kbd>
+          </Button>
+        </div>
 
         <!-- Mobile Menu -->
         <Button
