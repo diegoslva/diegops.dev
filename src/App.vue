@@ -19,9 +19,14 @@
   }
   
   // Listen for navigation changes
-  window.addEventListener('popstate', () => {
+  const updatePath = () => {
     currentPath.value = window.location.pathname
-  })
+  }
+  
+  window.addEventListener('popstate', updatePath)
+  
+  // Update path on initial load
+  updatePath()
 </script>
 
 <template>

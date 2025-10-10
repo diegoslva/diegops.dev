@@ -8,4 +8,7 @@ export default defineConfig({
     tailwindcss(),
     vue()
   ],
+  preview: {
+    historyApiFallback: true
+  }
 })
