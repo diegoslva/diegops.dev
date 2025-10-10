@@ -61,7 +61,7 @@ const handleKeyDown = (e) => {
 
 const handleItemSelect = (item) => {
   if (item.path) {
-    router.push(item.path);
+    window.location.href = item.path;
   } else if (item.action) {
     switch (item.action) {
       case 'newsletter':
@@ -119,17 +119,17 @@ defineExpose({
 
       <!-- Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a
+        <router-link
           v-for="item in navigationItems"
           :key="item.path"
-          :href="item.path"
+          :to="item.path"
           :class="`text-sm font-medium transition-colors hover:text-primary ${
             isActivePath(item.path) 
               ? 'text-primary' : 'text-muted-foreground'
           }`"
         >
           {{ item.name }}
-        </a>
+        </router-link>
       </nav>
 
       <!-- Command Palette Trigger & Actions -->
