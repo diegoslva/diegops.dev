@@ -87,7 +87,7 @@ const careerItems = [
     company: 'Rede Digital',
     companyUrl: 'https://renovedigital.com.br',
     location: 'São Paulo, SP',
-    startDate: '2018-01-01',
+    startDate: '2018-11-03',
     endDate: '2021-10-31'
   },
   {
@@ -95,7 +95,7 @@ const careerItems = [
     company: 'Freelancer',
     companyUrl: '#',
     location: 'São Paulo, SP',
-    startDate: '2018-12-01',
+    startDate: '2017-07-01',
     endDate: '2018-12-31'
   },
   {
@@ -103,15 +103,15 @@ const careerItems = [
     company: 'MKT Virtual',
     companyUrl: 'https://mktvirtual.com.br',
     location: 'São Paulo, SP',
-    startDate: '2017-01-01',
-    endDate: '2017-12-31'
+    startDate: '2017-01-02',
+    endDate: '2017-06-29'
   },
   {
     jobTitle: 'Desenvolvedor Front-End',
     company: 'Plug7 Inteligência Web',
     companyUrl: 'https://plug7.com.br',
     location: 'São Paulo, SP',
-    startDate: '2014-01-01',
+    startDate: '2014-04-01',
     endDate: '2016-12-31'
   },
   {
@@ -133,10 +133,13 @@ const getDuration = (startDate, endDate) => {
   const start = new Date(startDate)
   const end = endDate ? new Date(endDate) : new Date()
   
-  const diffTime = Math.abs(end - start)
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-  const years = Math.floor(diffDays / 365)
-  const months = Math.floor((diffDays % 365) / 30)
+  let years = end.getFullYear() - start.getFullYear()
+  let months = end.getMonth() - start.getMonth()
+  
+  if (months < 0) {
+    years--
+    months += 12
+  }
   
   let duration = ''
   if (years > 0) {
