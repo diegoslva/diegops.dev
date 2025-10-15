@@ -105,7 +105,7 @@ defineExpose({
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border border-b-gray-800">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border border-b-neutral-700">
     <div class="flex items-center justify-between h-16 px-6">
       <!-- Logo -->
       <div class="flex items-center">

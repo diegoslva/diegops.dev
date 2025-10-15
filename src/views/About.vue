@@ -65,7 +65,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import Icon from '../components/AppIcon.vue'
 
 const description = "Diego Silva é um desenvolvedor brasileiro especializado em tecnologias web modernas. Atualmente vive em São Paulo, onde trabalha como desenvolvedor full stack focado em Vue.js, Node.js e PHP. Sua paixão por desenvolvimento de software e compartilhamento de conhecimento o levou a criar diversos projetos open source. Antes de se especializar em desenvolvimento web, Diego explorou diferentes áreas da programação, sempre buscando as melhores práticas e tecnologias mais eficientes."
 
