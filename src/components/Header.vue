@@ -109,7 +109,7 @@ defineExpose({
     <div class="flex items-center justify-between h-16 px-6">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="/homepage-command-center" class="flex items-center space-x-2">
+        <a href="/" class="flex items-center space-x-2">
           <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
             <span class="text-primary-foreground font-bold text-sm">D</span>
           </div>
