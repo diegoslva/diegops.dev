@@ -10,5 +10,16 @@ export default defineConfig({
   ],
   preview: {
     historyApiFallback: true
-  }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three': ['three'],
+          'vue': ['vue'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
 })

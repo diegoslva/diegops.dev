@@ -25,7 +25,7 @@ body {
   min-height: 100vh;
 }
 
-body:before {
+/* body:before {
   --size: 45px;
   --line:  color-mix(in lch, canvasText, transparent 90%);
   content: '';
@@ -39,7 +39,7 @@ body:before {
   transform-style: flat;
   pointer-events: none;
   z-index: -1;
-}
+} */
 
 
 button {
