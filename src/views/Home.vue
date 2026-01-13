@@ -7,7 +7,7 @@
 
 <template>
   <ThreeCanvas />
-  <div class="container mx-auto px-4 pt-0 py-8 lg:py-10 lg:px-10 text-left">
+  <div class="container mx-auto px-4 py-8 pt-14 lg:py-10 lg:px-10 text-left">
     <div class="backdrop-blur-lg p-4">
       <div class="text-3xl font-bold text-left mb-3 text-white text-balance">Me recuso a aceitar um futuro em que a <br><span>Web</span> <span>seja</span> <span style="color: hsl(15 80% 50%)">estática</span>, <span style="color: hsl(15 80% 50%)">padrão</span> e <strong style="color: hsl(15 80% 50%)">chata</strong>.
       
